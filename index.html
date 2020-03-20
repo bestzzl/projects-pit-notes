@@ -11,5 +11,11 @@
     <p>1.ios系统中 传入 <code>new Date()</code>中的日期字符串中不能带有’-‘，需要转换成'/'</p>
     <p>2.微信浏览器中,如果给body设置了 <code>overflow:hidden</code>，在android中会导致长页面滑动非常不流畅</p>
     <p>3.在微信浏览器中，如果用 <code>input type=file capture=camera</code>调用摄像头拍照，则accept必须为image/*，否则不能调用</p>
+    <p>4.js在浏览器里执行，设置输入框的值，提交表单的方法
+        const setValue = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set
+        setValue.call(input, '22');
+        const event = new Event('input', {bubbles: true})
+        input.dispatchEvent(event)
+    </p>
 </body>
 </html>

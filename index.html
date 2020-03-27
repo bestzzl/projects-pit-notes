@@ -54,7 +54,16 @@ setState 的批量更新优化也是建立在“异步”（合成事件、钩�
 在当前的微任务没有执行完成时，是不会执行下一个宏任务的。
     </p>
     <p>
+        setState何时同步何时异步？
+由React控制的事件处理程序，以及生命周期函数调用setState不会同步更新state 。
+
+React控制之外的事件中调用setState是同步更新的。比如原生js绑定的事件，setTimeout/setInterval等。
         
+        setState -> 调和阶段（更新虚拟dom，调用生命周期方法） -> commit阶段（渲染dom，调用生命周期方法）
+
+        因为setState本身是同步的，所以在脱离react之外时调用是同步的。但是通过react调用时，在requestWork这个方法中会判断isRendering
+        和isBatchingUpdates，前者在performWorkOnRoot方法中置为true，这个方法在调和阶段调用，调和阶段会调用生命周期方法，所以在生命
+        周期方法中调用setState会被return；后者在react的合成事件中被调用，置为true。
     </p>
 </body>
 </html>

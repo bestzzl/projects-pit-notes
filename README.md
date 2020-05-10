@@ -1,3 +1,12 @@
+# react
+
+## react错误处理 componentDidCatch getDerivedStateFromError
+ a. 能捕获子组件的异常，不能捕获自己的异常，事件处理函数中的异常，异步中的异常
+ b. 可以使用一个高阶组件，用来在组件出现异常时渲染备用ui
+ c. componentDidCatch只在浏览器中被调用，不在服务端被调用，getDerivedStateFromError都会
+ d. 前者发生在dom更新之后，通常用于错误的上报，可以访问组件的实例this，后者在更新之前，用于渲染备用ui
+ e. 为什么不在componentDidCatch渲染备用ui是因为它是同步渲染的，react之后推行异步渲染，可能会有错误。（但是没什么大问题）
+
 # 性能优化
 
 ## 网络层面

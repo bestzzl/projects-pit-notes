@@ -1,3 +1,4 @@
+# fiber https://github.com/Advanced-Interview-Question/front-end-interview/blob/master/docs/guide/fiber.md
 # http
 ## no-cache no-store的区别
  * no-cache 可以在本地缓存，可以在代理服务器缓存，但是这个缓存要服务器验证才可以使用

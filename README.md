@@ -1,4 +1,7 @@
 # http
+## no-cache no-store的区别
+ * no-cache 可以在本地缓存，可以在代理服务器缓存，但是这个缓存要服务器验证才可以使用
+ * no-store 彻底得禁用缓冲，本地和代理服务器都不缓冲，每次都从服务器获取
 ## HTTP1.0和HTTP1.1的一些区别
  * 缓存处理，在HTTP1.0中主要使用header里的If-Modified-Since,Expires来做为缓存判断的标准，HTTP1.1则引入了更多的缓存控制策略例如Entity tag，If-Unmodified-Since, If-Match, If-None-Match等更多可供选择的缓存头来控制缓存策略。
  

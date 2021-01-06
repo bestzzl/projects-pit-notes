@@ -8,6 +8,20 @@
     <title>Document</title>
 </head>
 <body>
+    
+    animation: zhuan 8s cubic-bezier(.77,.23,0,1);
+animation-fill-mode: forwards;
+@keyframes zhuan {
+    from {
+      transform: rotateZ(0deg); 
+    }
+  
+    to {
+        transform: rotateZ((360*24) - 45deg); 
+    }
+  }
+
+    
     <p>1.ios系统中 传入 <code>new Date()</code>中的日期字符串中不能带有’-‘，需要转换成'/'</p>
     <p>2.微信浏览器中,如果给body设置了 <code>overflow:hidden</code>，在android中会导致长页面滑动非常不流畅</p>
     <p>3.在微信浏览器中，如果用 <code>input type=file capture=camera</code>调用摄像头拍照，则accept必须为image/*，否则不能调用</p>
